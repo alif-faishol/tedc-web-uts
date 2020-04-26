@@ -5,61 +5,131 @@
       "id": 1,
       "name": "African Grey Parrot",
       "image": "https://tedc-web-uts.netlify.app/res/images/African-Grey.jpg",
-      "description": "The African grey parrot’s ability to talk and mimic sounds makes this medium-sized parrot a captivating companion. African grey owners often report that their greys oftentimes talk in context and seem very attuned to their people’s emotions. The African grey parrot is not just a top talker — this bird is also known for its extreme intelligence, which gives them the moniker “The Einsteins of the Bird World.”"
+      "description": "The African grey parrot’s ability to talk and mimic sounds makes this medium-sized parrot a captivating companion. African grey owners often report that their greys oftentimes talk in context and seem very attuned to their people’s emotions. The African grey parrot is not just a top talker — this bird is also known for its extreme intelligence, which gives them the moniker “The Einsteins of the Bird World.”",
+      "specs": {
+        "color": "Gray",
+        "size": "medium",
+        "lifespan": "30 + years",
+        "sounds": "Vocal communicator",
+        "interaction": "Highly social"
+      }
     },
     {
       "id": 2,
       "name": "Alexandrine Parakeet",
       "image": "https://tedc-web-uts.netlify.app/res/images/Alexandrine-Parakeet.jpg",
-      "description": "Loyal, playful and talkative are words used to describe the Alexandrine parakeet, which can also learn tricks and is inclined to show off its acrobat skills."
+      "description": "Loyal, playful and talkative are words used to describe the Alexandrine parakeet, which can also learn tricks and is inclined to show off its acrobat skills.",
+      "specs": {
+        "color": "Green",
+        "size": "medium",
+        "lifespan": "Up to 30 years",
+        "sounds": "Vocal communicator",
+        "interaction": "Social"
+      }
     },
     {
       "id": 3,
       "name": "Amazon Parrot",
       "image": "https://tedc-web-uts.netlify.app/res/images/Yellow-Naped-Amazon-Parrot.jpg",
-      "description": "Amazon parrots are among the more popular medium-sized parrot species, which might have something to do with their gregarious personalities. They are often described as boisterous, playful, and outgoing — some even like to sing. Male Amazons have a reputation for exhibiting “macho” behavior — they might flare their tail feathers, pin their eyes and “strut” across the floor or table top."
+      "description": "Amazon parrots are among the more popular medium-sized parrot species, which might have something to do with their gregarious personalities. They are often described as boisterous, playful, and outgoing — some even like to sing. Male Amazons have a reputation for exhibiting “macho” behavior — they might flare their tail feathers, pin their eyes and “strut” across the floor or table top.",
+      "specs": {
+        "color": "Green",
+        "size": "medium",
+        "lifespan": "30 + years",
+        "sounds": "Vocal communicator",
+        "interaction": "Social"
+      }
     },
     {
       "id": 4,
       "name": "Blue-and-Gold Macaw",
       "image": "https://tedc-web-uts.netlify.app/res/images/Blue-and-Gold-Macaw.jpg",
-      "description": "The blue-and-gold macaw is aptly named, with a gorgeous blue body and dark lemon-yellow chest, this is a bird that’s hard to miss. It also referred to as the blue-and-yellow macaw."
+      "description": "The blue-and-gold macaw is aptly named, with a gorgeous blue body and dark lemon-yellow chest, this is a bird that’s hard to miss. It also referred to as the blue-and-yellow macaw.",
+      "specs": {
+        "color": "Blue, Yellow",
+        "size": "large",
+        "lifespan": "30 + years",
+        "sounds": "Vocal communicator",
+        "interaction": "Highly social"
+      }
     },
     {
       "id": 5,
       "name": "Blue-Crowned conure",
       "image": "https://tedc-web-uts.netlify.app/res/images/Blue-Crowned-Conure.jpg",
-      "description": "The blue-crowned conure has a large vocabulary and high intelligence to match. This species is known as one of the better talkers in the conure family, though it can be a little difficult to understand."
+      "description": "The blue-crowned conure has a large vocabulary and high intelligence to match. This species is known as one of the better talkers in the conure family, though it can be a little difficult to understand.",
+      "specs": {
+        "color": "Blue, Green",
+        "size": "small",
+        "lifespan": "Up to 20 years",
+        "sounds": "Vocal communicator",
+        "interaction": "Highly social"
+      }
     },
     {
       "id": 6,
       "name": "Blue-Headed Pionus",
       "image": "https://tedc-web-uts.netlify.app/res/images/Pionus.jpg",
-      "description": "Blue-headed Pionus can be laid-back, relatively quiet parrots, which makes them ideal for those who live in apartments."
+      "description": "Blue-headed Pionus can be laid-back, relatively quiet parrots, which makes them ideal for those who live in apartments.",
+      "specs": {
+        "color": "Blue, Green",
+        "size": "medium",
+        "lifespan": "30 + years",
+        "sounds": "Vocal communicator",
+        "interaction": "Social"
+      }
     },
     {
       "id": 7,
       "name": "Budgie (Parakeet)",
       "image": "https://tedc-web-uts.netlify.app/res/images/Parakeet.jpg",
-      "description": "The budgie (parakeet) is often thought of as a “beginner bird,” however, this social, outgoing little bird deserves just as much care and attention as larger parrots. Budgies are playful, love food and they can rival any parrot in terms of talking ability."
+      "description": "The budgie (parakeet) is often thought of as a “beginner bird,” however, this social, outgoing little bird deserves just as much care and attention as larger parrots. Budgies are playful, love food and they can rival any parrot in terms of talking ability.",
+      "specs": {
+        "color": "Blue, Green, White, Yellow",
+        "size": "small",
+        "lifespan": "Up to 10 years",
+        "sounds": "Chatterer, Whistler",
+        "interaction": "Social"
+      }
     },
     {
       "id": 8,
       "name": "Caique",
       "image": "https://tedc-web-uts.netlify.app/res/images/Caique.jpg",
-      "description": "Caiques have been called clowns of the bird world for good reason — the clown is a truly appropriate metaphor for this high-energy, medium-sized mischief maker. You haven’t seen playful until you’ve seen a caique in action."
+      "description": "Caiques have been called clowns of the bird world for good reason — the clown is a truly appropriate metaphor for this high-energy, medium-sized mischief maker. You haven’t seen playful until you’ve seen a caique in action.",
+      "specs": {
+        "color": "Green, Yellow",
+        "size": "medium",
+        "lifespan": "Up to 30 years",
+        "sounds": "Vocal communicator",
+        "interaction": "Highly social"
+      }
     },
     {
       "id": 9,
       "name": "Canary",
       "image": "https://tedc-web-uts.netlify.app/res/images/Canary.jpg",
-      "description": "The canary has been a favorite among bird keepers for hundreds of years, and has been bred into more than 200 breeds, much like dogs have, each breed prized for a particular skill or appearance."
+      "description": "The canary has been a favorite among bird keepers for hundreds of years, and has been bred into more than 200 breeds, much like dogs have, each breed prized for a particular skill or appearance.",
+      "specs": {
+        "color": "Orange, Red, Yellow",
+        "size": "small",
+        "lifespan": "Up to 10 years",
+        "sounds": "Chatterer, Whistler",
+        "interaction": "Hands off"
+      }
     },
     {
       "id": 10,
       "name": "Cockatiel",
       "image": "https://tedc-web-uts.netlify.app/res/images/Cockatiel-2.jpg",
-      "description": "There’s a reason why the cockatiel is one of the most popular companion birds — this slender Australian parrot can be both cuddly and bold. Cockatiels can also be curious and, at times, feisty. With a cockatiel in the house, you are likely to hear a repertoire of chirps and whistles."
+      "description": "There’s a reason why the cockatiel is one of the most popular companion birds — this slender Australian parrot can be both cuddly and bold. Cockatiels can also be curious and, at times, feisty. With a cockatiel in the house, you are likely to hear a repertoire of chirps and whistles.",
+      "specs": {
+        "color": "Gray, White, Yellow",
+        "size": "small",
+        "lifespan": "Up to 30 years",
+        "sounds": "Whistler",
+        "interaction": "Social"
+      }
     }
   ]
 }

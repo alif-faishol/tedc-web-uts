@@ -53,7 +53,7 @@ const Brand = {
   methods: {
     loadData: function() {
       this.loading = true
-      fetch('/res/brand.json')
+      fetch('https://tedc-web-uts.netlify.app/res/brand.json')
         .then(res => res.json())
         .then(json => {
           this.data = json.data
