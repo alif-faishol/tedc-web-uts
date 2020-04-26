@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <b-navbar>
+      <b-navbar type="is-black">
         <template slot="start">
           <b-navbar-item tag="router-link" :to="{ path: '/' }">
             Home
@@ -23,36 +23,24 @@
             Blog
           </b-navbar-item>
         </template>
-
-        <template slot="end">
-          <b-navbar-item tag="div">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
-            </div>
-          </b-navbar-item>
-        </template>
       </b-navbar>
-      <router-view></router-view>
+      <div class="container">
+        <router-view></router-view>
+      </div>
     </div>
 
     <script src="lib/vue.js" charset="utf-8"></script>
     <script src="lib/vue-router.js" charset="utf-8"></script>
     <script src="lib/buefy.js" charset="utf-8"></script>
     <script charset="utf-8" type="module">
-      import Brand from './pages/brand.js'
-
-      const Home = { template: '<p>Halaman Home</p>' };
-      const BrandDetail = { template: '<p>Halaman Brand Detail</p>' };
-      const Product = { template: '<p>Halaman Product</p>' };
-      const ProductDetail = { template: '<p>Halaman Product Detail</p>' };
-      const Pembayaran = { template: '<p>Halaman Pembayaran</p>' };
-      const Blog = { template: '<p>Halaman Blog</p>' };
-      const BlogDetail = { template: '<p>Halaman Blog Detail</p>' };
+      import Brand from './pages/brand.js';
+      import Home from './pages/home.js';
+      import BrandDetail from './pages/brand-detail.js';
+      import Product from './pages/product.js';
+      import ProductDetail from './pages/product-detail.js';
+      import Pembayaran from './pages/pembayaran.js';
+      import Blog from './pages/blog.js';
+      import BlogDetail from './pages/blog-detail.js';
 
       const router = new VueRouter({
         routes: [
