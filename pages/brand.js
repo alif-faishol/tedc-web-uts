@@ -1,4 +1,4 @@
-const NEWS_API_KEY = 'db9b661f07bd4234917209689296ee31'
+const NEWS_API_KEY = 'db9b661f07bd4234917209689296ee31';
 
 const BrandCard = {
   props: ['brand'],
@@ -15,12 +15,11 @@ const BrandCard = {
       </div>
     </div>
   </router-link>
-  `
-}
-
+  `,
+};
 
 const Brand = {
-  data: function() {
+  data: function () {
     return {
       data: [],
       page: 1,
@@ -33,12 +32,12 @@ const Brand = {
           gridTemplateColumns: 'repeat(auto-fill, 300px)',
           gridGap: '1rem',
           justifyContent: 'center',
-        }
-      }
+        },
+      },
     };
   },
   components: {
-    'brand-card': BrandCard
+    'brand-card': BrandCard,
   },
   template: `
   <div>
@@ -51,23 +50,23 @@ const Brand = {
   </div>
   `,
   methods: {
-    loadData: function() {
-      this.loading = true
-      fetch('https://tedc-web-uts.netlify.app/res/brand.json')
-        .then(res => res.json())
-        .then(json => {
-          this.data = json.data
-          this.loading = false
+    loadData: function () {
+      this.loading = true;
+      fetch('./res/brand.json')
+        .then((res) => res.json())
+        .then((json) => {
+          this.data = json.data;
+          this.loading = false;
         })
-        .catch(err => {
-          this.error = err
-          this.loading = false
-        })
-    }
+        .catch((err) => {
+          this.error = err;
+          this.loading = false;
+        });
+    },
   },
-  mounted: function() {
-    this.loadData()
-  }
+  mounted: function () {
+    this.loadData();
+  },
 };
 
 export default Brand;

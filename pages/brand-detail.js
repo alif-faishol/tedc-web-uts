@@ -1,10 +1,10 @@
 const BrandDetail = {
-  data: function() {
+  data: function () {
     return {
       data: null,
       loading: true,
       error: null,
-    }
+    };
   },
   template: `
   <div>
@@ -51,23 +51,25 @@ const BrandDetail = {
   </div>
   `,
   methods: {
-    loadData: function() {
+    loadData: function () {
       this.loading = true;
-      fetch('https://tedc-web-uts.netlify.app/res/brand.json')
-        .then(res => res.json())
-        .then(json => {
-          this.data = json.data.find(brand => brand.id.toString() === this.$route.params.id)
+      fetch('./res/brand.json')
+        .then((res) => res.json())
+        .then((json) => {
+          this.data = json.data.find(
+            (brand) => brand.id.toString() === this.$route.params.id
+          );
           this.loading = false;
         })
-        .catch(err => {
+        .catch((err) => {
           this.error = err;
           this.loading = false;
-        })
-    }
+        });
+    },
   },
-  mounted: function() {
-    this.loadData()
-  }
+  mounted: function () {
+    this.loadData();
+  },
 };
 
 export default BrandDetail;
