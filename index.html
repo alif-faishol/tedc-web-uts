@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width" />
     <title>Bird Shop</title>
     <link rel="stylesheet" href="lib/buefy.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   </head>
   <body>
     <div id="app">
-      <b-navbar type="is-black" fixed-top>
+      <b-navbar type="is-dark" fixed-top>
         <template slot="start">
-          <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <b-navbar-item tag="router-link" :to="{ path: '/' }" exact>
             Home
           </b-navbar-item>
           <b-navbar-item tag="router-link" :to="{ path: '/brand' }">
@@ -57,6 +59,7 @@
           { path: '/blog', component: Blog },
           { path: '/blog/:id', component: BlogDetail },
         ],
+        linkActiveClass: 'is-active',
       });
 
       const app = new Vue({
