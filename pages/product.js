@@ -46,8 +46,8 @@ const Product = {
     <b-input placeholder="silahkan cari nama burung yang kamu mau" v-model="keyword"></b-input>
     <br/><br/>
     <template v-if="!loading">
-      <div :style="styles.productContainer" v-for="(bird, index) of filterBurungs" :key="index">
-        <product-card :product="product" v-for="product in data" />
+      <div :style="styles.productContainer">
+        <product-card :product="product" v-for="product in filterBurungs" />
       </div>
     </template>
     <b-skeleton :active="loading" />
