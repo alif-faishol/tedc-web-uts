@@ -1,36 +1,30 @@
 const NEWS_API_KEY = 'db9b661f07bd4234917209689296ee31'
+const NEWS_API_PAGE_SIZE = 4
 
 const ArticleCard = {
-  props: ['article'],
+  props: ['article', 'index'],
   template: `
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img :src="article.urlToImage || 'https://source.unsplash.com/random'" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
+<router-link :to="{ path: '/blog/' + index }">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img :src="article.urlToImage || 'https://source.unsplash.com/random'" alt="Thumbnail">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{ article.title }}</p>
+          <p class="subtitle is-6">{{ article.author }}</p>
+        </div>
       </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
+  
+      <div class="content">
+        <time>{{ new Date(article.publishedAt).toLocaleString() }}</time>
       </div>
     </div>
-
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
   </div>
-</div>
+</router-link>
   `
 }
 
@@ -40,13 +34,15 @@ const Blog = {
     return {
       data: [],
       page: 1,
-      totalPage: 1,
+      totalResults: 1,
+      loading: true,
       styles: {
         articleContainer: {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, 300px)',
           gridGap: '1rem',
           justifyContent: 'center',
+          marginBottom: '2rem',
         }
       }
     };
@@ -56,16 +52,28 @@ const Blog = {
   },
   template: `
   <div>
-    <div :style="styles.articleContainer">
-      <article-card :article="article" v-for="article in data" />
-    </div>
-    <p>Page: {{page}}</p>
-    <p>Total Page: {{totalPage}}</p>
+    <template v-if="!loading">
+      <div :style="styles.articleContainer">
+        <article-card v-for="(article, index) in data" :article="article" :index="(page - 1) * ${NEWS_API_PAGE_SIZE} + index" />
+      </div>
+      <div class="container">
+        <b-pagination
+          :total="totalResults"
+          :per-page="${NEWS_API_PAGE_SIZE}"
+          :current.sync="page"
+          icon-prev="chevron-left"
+          icon-next="chevron-right"
+        >
+        </b-pagination>
+      </div>
+    </template>
+    <b-skeleton :active="loading" />
   </div>
   `,
   methods: {
     loadData: function() {
-      fetch('https://newsapi.org/v2/everything?language=id&q=burung',
+      this.loading = true;
+      fetch(`https://newsapi.org/v2/everything?language=id&qInTitle=burung&page=${this.page}&pageSize=${NEWS_API_PAGE_SIZE}`,
         {
           headers: {
             Authorization: `Bearer ${NEWS_API_KEY}`,
@@ -74,9 +82,18 @@ const Blog = {
       )
         .then(res => res.json())
         .then(json => {
-          this.data = json.articles
-          this.totalPage = Math.ceil(json.totalResults / 20)
+          this.data = json.articles;
+          this.totalResults = json.totalResults;
+          this.loading = false;
         })
+        .catch(err => {
+          this.loading = false
+        })
+    }
+  },
+  watch: {
+    page: function(newPage) {
+      this.loadData()
     }
   },
   mounted: function() {

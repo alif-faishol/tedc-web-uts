@@ -52,7 +52,7 @@ const Brand = {
   methods: {
     loadData: function () {
       this.loading = true;
-      fetch('./res/brand.json')
+      fetch('https://api.jsonbin.io/b/5ea8421307d49135ba4722a1')
         .then((res) => res.json())
         .then((json) => {
           this.data = json.data;
