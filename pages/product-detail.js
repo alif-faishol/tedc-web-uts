@@ -8,7 +8,7 @@ const ProductDetail = {
   },
   template: `
   <div>
-    <article class="media">
+    <article class="media" v-if="!loading && data">
       <figure class="media-left is-5by3" >
         <img :src="data.image" :alt="data.name" style="object-fit: cover">
       </figure>
@@ -22,16 +22,7 @@ const ProductDetail = {
             Rp. {{ data.price }} 
             <br/>
             <br/>
-
-            <template>
-              <section>
-                <b-field label="how much :">
-                  <b-numberinput min="1" max="10" name="howmuch" controls-position="compact">
-                  </b-numberinput>
-                </b-field>
-              </section>
-            </template>
-            <b-button type="is-success">buy it</b-button>            
+            <b-button type="is-success" tag="router-link" :to="{path: '/pembayaran/' + data.id}">buy it</b-button>            
           </p>
         </div>
       </div>
