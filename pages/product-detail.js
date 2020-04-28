@@ -8,13 +8,34 @@ const ProductDetail = {
   },
   template: `
   <div>
-    <template v-if="!loading && data">
-      <figure class="image is-5by3" style="margin-bottom: 1rem">
+    <article class="media">
+      <figure class="media-left is-5by3" >
         <img :src="data.image" :alt="data.name" style="object-fit: cover">
       </figure>
-      <h1 class="title">{{ data.name }}</h1>
-      <p>Rp. {{ data.price }}</p>
-    </template>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ data.name }}</strong>
+            <br>
+            <br/>
+            
+            Rp. {{ data.price }} 
+            <br/>
+            <br/>
+
+            <template>
+              <section>
+                <b-field label="how much :">
+                  <b-numberinput min="1" max="10" name="howmuch" controls-position="compact">
+                  </b-numberinput>
+                </b-field>
+              </section>
+            </template>
+            <b-button type="is-success">buy it</b-button>            
+          </p>
+        </div>
+      </div>
+    </article>
     <b-skeleton :active="loading" />
   </div>
   `,
