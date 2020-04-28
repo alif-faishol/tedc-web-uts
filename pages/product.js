@@ -13,15 +13,16 @@ const productCard = {
       </div>
       <div class="card-content">
         <div class="content">Price Rp.{{product.price}}</div>
-        <b-button type="is-success" expanded>buy</b-button>
+        <b-button type="is-success" expanded>see more</b-button>
       </div>
     </div>
   </router-link>
   `,
 };
 const Product = {
-  data: function () {
+  data() {
     return {
+      keyword: '',
       data: [],
       page: 1,
       totalPage: 1,
@@ -41,9 +42,11 @@ const Product = {
     'product-card': productCard,
   },
   template: `
-  <div>
+  <div id="app">
+    <b-input placeholder="silahkan cari nama burung yang kamu mau" v-model="keyword"></b-input>
+    <br/><br/>
     <template v-if="!loading">
-      <div :style="styles.productContainer">
+      <div :style="styles.productContainer" v-for="(bird, index) of filterBurungs" :key="index">
         <product-card :product="product" v-for="product in data" />
       </div>
     </template>
@@ -68,6 +71,13 @@ const Product = {
   mounted: function () {
     this.loadData();
   },
+  computed: {
+    filterBurungs() {
+      const keyword = this.keyword;
+      return this.data.filter((bird) => {
+        return bird.name.toLowerCase().includes(this.keyword.toLowerCase());
+      });
+    },
+  },
 };
-
 export default Product;
