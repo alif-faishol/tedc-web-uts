@@ -8,7 +8,7 @@ const Pembayaran = {
     };
   },
   template: `
-    <div>
+    <div class="container">
       <article class="media" v-if="!loading && data">
         <div class="media-content">
           <div class="content">
@@ -35,11 +35,13 @@ const Pembayaran = {
   watch: {
     howmuch: function (val) {
       localStorage.setItem('pay', this.data.price * val);
+      localStorage.howmuch = val;
     },
   },
   methods: {
     pay: function () {
       localStorage.total = this.data.price * this.howmuch;
+      localStorage.howmuch = this.howmuch;
     },
     loadData: function () {
       this.loading = true;

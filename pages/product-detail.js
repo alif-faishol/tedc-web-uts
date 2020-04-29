@@ -7,7 +7,7 @@ const ProductDetail = {
     };
   },
   template: `
-  <div>
+  <div class="container">
     <article class="media" v-if="!loading && data">
       <figure class="media-left is-5by3" >
         <img :src="data.image" :alt="data.name" style="object-fit: cover">
