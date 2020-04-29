@@ -36,26 +36,29 @@ const Thanks = {
   },
   template: `
     <div class="container">
-      <h1 class="title" style="@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); font-family: 'Lobster', cursive;">Terima Kasih</h1><br/>
-      <table>
-        <tr>
-          <td>Item Name</td>
-          <td>:</td>
-          <td>{{data.name}}</td>
-        </tr>
-        <tr>
-          <td>Price</td>
-          <td>:</td>
-          <td>Rp. {{data.price}}</td>
-        </tr>
-        <tr>
-          <td>Amount</td>
-          <td>:</td>
-          <td>{{amount}}</td>
-        </tr>
-      </table><br/>
-      <strong class="title">Total Rp. {{total}}</strong></br>
-      <b-button type="is-success" tag="router-link" :to="{path: '/product'}" style="margin-top: 50px">ok</b-button>
+      <template v-if="!loading && data">
+        <h1 class="title" style="@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); font-family: 'Lobster', cursive;">Terima Kasih</h1><br/>
+        <table>
+          <tr>
+            <td>Item Name</td>
+            <td>:</td>
+            <td>{{data.name}}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>:</td>
+            <td>Rp. {{data.price}}</td>
+          </tr>
+          <tr>
+            <td>Amount</td>
+            <td>:</td>
+            <td>{{amount}}</td>
+          </tr>
+        </table><br/>
+        <strong class="title">Total Rp. {{total}}</strong></br>
+        <b-button type="is-success" tag="router-link" :to="{path: '/product'}" style="margin-top: 50px">ok</b-button>
+      </template>
+      <b-skeleton :active="loading" />
     </div>
   `,
 };

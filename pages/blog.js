@@ -8,7 +8,7 @@ const ArticleCard = {
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="article.urlToImage || 'https://source.unsplash.com/random'" alt="Thumbnail">
+        <img :src="article.urlToImage || 'https://source.unsplash.com/random'" alt="Thumbnail" style="object-fit: cover">
       </figure>
     </div>
     <div class="card-content">
