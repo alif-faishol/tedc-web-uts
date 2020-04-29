@@ -44,6 +44,11 @@ const Thanks = {
           <td>{{data.name}}</td>
         </tr>
         <tr>
+          <td>Price</td>
+          <td>:</td>
+          <td>Rp. {{data.price}}</td>
+        </tr>
+        <tr>
           <td>Amount</td>
           <td>:</td>
           <td>{{amount}}</td>
